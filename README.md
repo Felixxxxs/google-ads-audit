@@ -93,6 +93,14 @@ docs/api-access.md
 
 Conversion tracking (which actions really feed Smart Bidding, goal traps, leftover actions, values, counting), search terms and negatives (brand share, cannibalisation, served match types and AI Max, invisible spend), budgets and bidding (data thresholds for Smart Bidding, budget vs rank as the binding constraint, budget-pinned days), targeting (presence vs interest, include lists, languages, search partners, Display), keywords and Quality Score components, ads, assets and landing pages, change history and hygiene, then unit economics and the scaling ceiling. Details: [methodology.md](skills/google-ads-audit/references/methodology.md).
 
+## Your data
+
+Reports contain business data: keep them in a private folder or repository. The skill only reads, the scripts keep credentials outside every repository and never print them. Details and how to report a security issue: [SECURITY.md](SECURITY.md).
+
+## Contributing
+
+Contributions are welcome: new checks and decision rules, fixes, better templates, translations, reports of where a recommendation was wrong. Read [CONTRIBUTING.md](CONTRIBUTING.md), open an [issue](https://github.com/Felixxxxs/google-ads-audit/issues/new/choose), or start a thread in [Discussions](https://github.com/Felixxxxs/google-ads-audit/discussions). This project follows the [Code of Conduct](CODE_OF_CONDUCT.md).
+
 ## Maintainer
 
 - **Felix Zeeb** ([@Felixxxxs](https://github.com/Felixxxxs))

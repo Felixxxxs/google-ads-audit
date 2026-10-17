@@ -1,0 +1,27 @@
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Script syntax
+        run: for f in skills/*/scripts/*.mjs skills/*/scripts/*.js; do [ -e "$f" ] && node --check "$f" && echo "ok $f"; done
+      - name: Plugin manifests are valid JSON
+        run: for f in .claude-plugin/*.json; do node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" && echo "ok $f"; done
+      - name: SKILL.md has name and description
+        run: |
+          for f in skills/*/SKILL.md; do
+            head -5 "$f" | grep -q '^name: ' && head -5 "$f" | grep -q '^description: ' && echo "ok $f" || { echo "missing frontmatter in $f"; exit 1; }
+          done
+      - name: No scripts with write calls
+        run: |
+          if grep -nE ':mutate|Service\.mutate|\.mutate\(|analytics\.edit|analytics\.manage' skills/*/scripts/*; then echo "write call found"; exit 1; fi
