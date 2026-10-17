@@ -1,0 +1,10 @@
+{
+  "name": "google-ads-audit",
+  "version": "0.1.0",
+  "description": "Claude skill: pull Google Ads data, audit the account, and get a phased optimisation plan, to-do checklist, experiment backlog and setup checklist. Read only.",
+  "author": { "name": "Felix Zeeb" },
+  "homepage": "https://github.com/Felixxxxs/google-ads-audit",
+  "repository": "https://github.com/Felixxxxs/google-ads-audit",
+  "license": "MIT",
+  "keywords": ["google-ads", "ppc", "sem", "audit", "marketing", "business-ai-os"]
+}

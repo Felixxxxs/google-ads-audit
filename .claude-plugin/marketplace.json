@@ -1,0 +1,12 @@
+{
+  "name": "google-ads-audit",
+  "owner": { "name": "Felix Zeeb" },
+  "plugins": [
+    {
+      "name": "google-ads-audit",
+      "source": "./",
+      "description": "Claude skill: pull Google Ads data, audit the account, and get a phased optimisation plan, to-do checklist, experiment backlog and setup checklist. Read only.",
+      "version": "0.1.0"
+    }
+  ]
+}

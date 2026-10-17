@@ -1,0 +1,21 @@
+# Credentials never live in this repo (they belong in ~/.config/<skill>/)
+*.json.key
+client_secret*.json
+ads.json
+*service-account*.json
+.env
+.env.*
+
+# Pulled data and reports from test runs
+/google-ads-data/
+/google-ads-audit/
+/ga4-data/
+/ga4-growth-strategy/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+node_modules/
