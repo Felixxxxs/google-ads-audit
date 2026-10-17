@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: 20
       - name: Script syntax
-        run: for f in skills/*/scripts/*.mjs skills/*/scripts/*.js; do [ -e "$f" ] && node --check "$f" && echo "ok $f"; done
+        run: for f in skills/*/scripts/*.mjs skills/*/scripts/*.js; do [ -e "$f" ] || continue; node --check "$f"; echo "ok $f"; done
       - name: Plugin manifests are valid JSON
         run: for f in .claude-plugin/*.json; do node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" && echo "ok $f"; done
       - name: SKILL.md has name and description
